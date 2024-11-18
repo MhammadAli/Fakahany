@@ -19,7 +19,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             SvgPicture.asset(Assets.imagesPlant),
           ],
@@ -35,8 +35,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   @override
   void initState() {
-    super.initState();
     executeNavigation();
+    super.initState();
   }
 
   void executeNavigation() {

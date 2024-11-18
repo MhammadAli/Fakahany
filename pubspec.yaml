@@ -28,6 +28,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  flutter_screenutil: ^5.9.3
+  flutter_localization: ^0.2.2
   flutter_svg: ^2.0.14
   flutter:
     sdk: flutter
@@ -107,3 +109,5 @@ flutter_assets_generator:
   output_dir: generated
   auto_detection: true
   class_name: Assets
+flutter_intl:
+  enabled: true

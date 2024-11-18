@@ -4,6 +4,10 @@ class Assets {
 
   static const String imagesFruits = 'assets/images/fruits.png';
   static const String imagesLogo = 'assets/images/logo.svg';
+  static const String imagesPageViewItem1BackgroundImage = 'assets/images/page_view_item1_background_image.svg';
+  static const String imagesPageViewItem1Image = 'assets/images/page_view_item1_image.svg';
+  static const String imagesPageViewItem2BackgroundImage = 'assets/images/page_view_item2_background_image.svg';
+  static const String imagesPageViewItem2Image = 'assets/images/page_view_item2_image.svg';
   static const String imagesPlant = 'assets/images/plant.svg';
   static const String imagesSplashBottom = 'assets/images/splash_bottom.svg';
 
