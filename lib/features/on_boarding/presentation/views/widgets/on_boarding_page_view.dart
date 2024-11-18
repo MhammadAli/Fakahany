@@ -18,7 +18,7 @@ class OnBoardingPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: PageView(
-        controller: PageController(),
+        controller: pageController,
         children: [
           PageViewItem(
             image: Assets.imagesPageViewItem1Image,

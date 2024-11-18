@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:fakahany/constants.dart';
 import 'package:fakahany/core/widgets/custom_button.dart';
+import 'package:fakahany/features/auth/presentation/views/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../utils/app_colors.dart';
@@ -23,9 +24,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
 
     pageController.addListener(() {
       currentPage = pageController.page!.round();
-     setState(() {
-
-     });
+      setState(() {});
     });
     super.initState();
   }
@@ -49,7 +48,9 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           dotsCount: 2,
           decorator: DotsDecorator(
             activeColor: AppColors.primaryColor,
-            color: (currentPage == 1) ? AppColors.primaryColor : AppColors.primaryColor.withOpacity(0.5),
+            color: (currentPage == 1)
+                ? AppColors.primaryColor
+                : AppColors.primaryColor.withOpacity(0.5),
           ),
         ),
         SizedBox(
@@ -65,7 +66,9 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
               horizontal: kHorizontalPadding,
             ),
             child: CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed(LoginView.routeName);
+              },
               text: 'ابدأ الآن',
             ),
           ),

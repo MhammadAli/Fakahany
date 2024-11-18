@@ -1,3 +1,4 @@
+import 'package:fakahany/features/auth/presentation/views/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -43,12 +44,18 @@ class PageViewItem extends StatelessWidget {
               ),
               Visibility(
                 visible: isVisible,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0.w),
-                  child: Text(
-                    'تخط',
-                    style: AppTextStyles.regular13.copyWith(
-                      color: const Color(0xFF949D9E),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushReplacementNamed(LoginView.routeName);
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.all(16.0.w),
+                    child: Text(
+                      'تخط',
+                      style: AppTextStyles.regular13.copyWith(
+                        color: const Color(0xFF949D9E),
+                      ),
                     ),
                   ),
                 ),
