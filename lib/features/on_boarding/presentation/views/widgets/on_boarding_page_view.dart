@@ -1,11 +1,16 @@
 import 'package:fakahany/features/on_boarding/presentation/views/widgets/page_view_item.dart';
+import 'package:fakahany/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../generated/assets.dart';
+import '../../../../../utils/app_colors.dart';
 
 class OnBoardingPageView extends StatelessWidget {
-  const OnBoardingPageView({super.key, required this.pageController});
+  const OnBoardingPageView({
+    super.key,
+    required this.pageController,
+  });
 
   final PageController pageController;
 
@@ -13,7 +18,7 @@ class OnBoardingPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: PageView(
-        controller: pageController,
+        controller: PageController(),
         children: [
           PageViewItem(
             image: Assets.imagesPageViewItem1Image,
@@ -25,38 +30,25 @@ class OnBoardingPageView extends StatelessWidget {
               children: [
                 Text(
                   'مرحبًا بك في',
-                  style: TextStyle(
-                    fontSize: 23.sp,
-                    fontFamily: 'Cairo',
-                    fontWeight: FontWeight.w700,
-                    height: 0.h,
-                  ),
+                  style: AppTextStyles.bold23,
                 ),
                 Text(
-                  'HUB',
-                  style: TextStyle(
-                    color: Color(0xFFF4A91F),
-                    fontSize: 23.sp,
-                    fontFamily: 'Cairo',
-                    fontWeight: FontWeight.w700,
-                    height: 0.h,
+                  '   HUB',
+                  style: AppTextStyles.bold23.copyWith(
+                    color: AppColors.secondaryColor,
                   ),
                 ),
                 Text(
                   'Fruit',
-                  style: TextStyle(
-                    color: Color(0xFF1B5E37),
-                    fontSize: 23.sp,
-                    fontFamily: 'Cairo',
-                    fontWeight: FontWeight.w700,
-                    height: 0.h,
+                  style: AppTextStyles.bold23.copyWith(
+                    color: AppColors.primaryColor,
                   ),
                 ),
               ],
-            ), isVisible: (pageController.hasClients ? pageController.page!.round() == 0 : true),
+            ), isVisible: true,
           ),
-          PageViewItem(
-            isVisible: (pageController.hasClients ? pageController.page!.round() != 0 : false),
+           PageViewItem(
+            isVisible: false,
             image: Assets.imagesPageViewItem2Image,
             backgroundImage: Assets.imagesPageViewItem2BackgroundImage,
             subtitle:
