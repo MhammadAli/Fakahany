@@ -5,12 +5,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../generated/assets.dart';
 
 class OnBoardingPageView extends StatelessWidget {
-  const OnBoardingPageView({super.key});
+  const OnBoardingPageView({super.key, required this.pageController});
+
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: PageView(
+        controller: pageController,
         children: [
           PageViewItem(
             image: Assets.imagesPageViewItem1Image,
@@ -50,9 +53,10 @@ class OnBoardingPageView extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
+            ), isVisible: (pageController.hasClients ? pageController.page!.round() == 0 : true),
           ),
           PageViewItem(
+            isVisible: (pageController.hasClients ? pageController.page!.round() != 0 : false),
             image: Assets.imagesPageViewItem2Image,
             backgroundImage: Assets.imagesPageViewItem2BackgroundImage,
             subtitle:

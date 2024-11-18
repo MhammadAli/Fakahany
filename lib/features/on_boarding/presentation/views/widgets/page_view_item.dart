@@ -3,14 +3,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PageViewItem extends StatelessWidget {
-  const PageViewItem(
-      {super.key,
-      required this.image,
-      required this.backgroundImage,
-      required this.subtitle,
-      required this.title});
+  const PageViewItem({
+    super.key,
+    required this.image,
+    required this.backgroundImage,
+    required this.subtitle,
+    required this.title,
+    required this.isVisible,
+  });
 
   final String image, backgroundImage, subtitle;
+  final bool isVisible;
   final Widget title;
 
   @override
@@ -36,9 +39,12 @@ class PageViewItem extends StatelessWidget {
                   image,
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(16.0.w),
-                child: Text('تخط'),
+              Visibility(
+                visible: isVisible,
+                child: Padding(
+                  padding: EdgeInsets.all(16.0.w),
+                  child: Text('تخط'),
+                ),
               ),
             ],
           ),
@@ -51,7 +57,7 @@ class PageViewItem extends StatelessWidget {
           height: 24.h,
         ),
         Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 16.0.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.0.h),
           child: Text(
             subtitle,
             textAlign: TextAlign.center,
