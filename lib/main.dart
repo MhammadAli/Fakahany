@@ -8,7 +8,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
 
 void main() {
-  SharedPreferencesSingleton.init();
+  WidgetsFlutterBinding.ensureInitialized();
+  Prefs.init();
   runApp(FruitHub());
 }
 
