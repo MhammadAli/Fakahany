@@ -7,6 +7,7 @@ class Assets {
   static const String fontsCairoRegular = 'assets/fonts/Cairo-Regular.ttf';
   static const String fontsCairoSemiBold = 'assets/fonts/Cairo-SemiBold.ttf';
   static const String imagesAppleIcon = 'assets/images/apple_icon.svg';
+  static const String imagesCheckIcon = 'assets/images/check_icon.svg';
   static const String imagesFacebookIcon = 'assets/images/facebook_icon.svg';
   static const String imagesFruits = 'assets/images/fruits.png';
   static const String imagesGoogleIcon = 'assets/images/google_icon.svg';
