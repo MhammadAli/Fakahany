@@ -1,11 +1,13 @@
 import 'package:fakahany/core/widgets/custom_button.dart';
 import 'package:fakahany/core/widgets/custom_text_field.dart';
+import 'package:fakahany/features/auth/presentation/views/widgets/or_divider.dart';
 import 'package:fakahany/utils/app_colors.dart';
 import 'package:fakahany/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../constants.dart';
+import 'dont_have_account_widget.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -59,31 +61,16 @@ class LoginViewBody extends StatelessWidget {
             SizedBox(
               height: 33.h,
             ),
-            Text.rich(
-              TextSpan(children: [
-                TextSpan(
-                  text: 'لا تمتلك حساب؟',
-                  style: AppTextStyles.semiBold16.copyWith(
-                    color: Color(0xFF616A6B),
-                  ),
-                ),
-                TextSpan(
-                  text: ' ',
-                  style: AppTextStyles.semiBold16.copyWith(
-                    color: Color(0xFF616A6B),
-                  ),
-                ),
-                TextSpan(
-                  text: 'قم بإنشاء حساب',
-                  style: AppTextStyles.semiBold16.copyWith(
-                    color: AppColors.primaryColor,
-                  ),
-                ),
-              ]),
+           const DontHaveAnAccountWidget(),
+            SizedBox(
+              height: 33.h,
             ),
+            OrDivider(),
           ],
         ),
       ),
     );
   }
 }
+
+
