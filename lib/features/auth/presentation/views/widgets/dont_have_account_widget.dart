@@ -1,3 +1,5 @@
+import 'package:fakahany/features/auth/presentation/views/signup_view.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../utils/app_colors.dart';
@@ -25,6 +27,9 @@ class DontHaveAnAccountWidget extends StatelessWidget {
           ),
         ),
         TextSpan(
+          recognizer: TapGestureRecognizer()..onTap = (){
+            Navigator.pushNamed(context, SignupView.routeName);
+          },
           text: 'قم بإنشاء حساب',
           style: AppTextStyles.semiBold16.copyWith(
             color: AppColors.primaryColor,
