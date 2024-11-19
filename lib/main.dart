@@ -1,4 +1,5 @@
 import 'package:fakahany/core/helper_functions/on_generate_routes.dart';
+import 'package:fakahany/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,7 +22,9 @@ class FruitHub extends StatelessWidget {
     return  ScreenUtilInit(
       child: MaterialApp(
         theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
           fontFamily: 'Cairo',
+          colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
         ),
         localizationsDelegates: [
           S.delegate,
