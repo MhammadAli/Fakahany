@@ -1,12 +1,14 @@
 import 'package:fakahany/core/widgets/custom_button.dart';
 import 'package:fakahany/core/widgets/custom_text_field.dart';
 import 'package:fakahany/features/auth/presentation/views/widgets/or_divider.dart';
+import 'package:fakahany/features/auth/presentation/views/widgets/social_login_button.dart';
 import 'package:fakahany/utils/app_colors.dart';
 import 'package:fakahany/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../constants.dart';
+import '../../../../../generated/assets.dart';
 import 'dont_have_account_widget.dart';
 
 class LoginViewBody extends StatelessWidget {
@@ -66,6 +68,30 @@ class LoginViewBody extends StatelessWidget {
               height: 33.h,
             ),
             OrDivider(),
+            SizedBox(
+              height:16.h,
+            ),
+            SocialLoginButton(
+              onPressed: (){},
+              image: Assets.imagesGoogleIcon,
+              title: 'تسجيل بواسطة جوجل',
+            ),
+            SizedBox(
+              height:16.h,
+            ),
+            SocialLoginButton(
+              onPressed: (){},
+              image: Assets.imagesAppleIcon,
+              title: 'تسجيل بواسطة أبل',
+            ),
+            SizedBox(
+              height:16.h,
+            ),
+            SocialLoginButton(
+              onPressed: (){},
+              image: Assets.imagesFacebookIcon,
+              title: 'تسجيل بواسطة فيسبوك',
+            ),
           ],
         ),
       ),
