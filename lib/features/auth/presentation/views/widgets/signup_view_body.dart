@@ -1,8 +1,11 @@
 import 'package:fakahany/constants.dart';
+import 'package:fakahany/core/widgets/custom_button.dart';
 import 'package:fakahany/core/widgets/custom_text_field.dart';
 import 'package:fakahany/features/auth/presentation/views/widgets/terms_and_conditions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'have_an_account_widget.dart';
 
 class SignupViewBody extends StatelessWidget {
   const SignupViewBody({super.key});
@@ -40,6 +43,14 @@ class SignupViewBody extends StatelessWidget {
               height: 16.h,
             ),
             TermsAndConditions(),
+            SizedBox(
+              height: 30.h,
+            ),
+            CustomButton(onPressed: (){}, text: 'إنشاء حساب جديد'),
+            SizedBox(
+              height: 26.h,
+            ),
+            HaveAnAccountWidget(),
 
           ],
         ),
