@@ -1,5 +1,6 @@
 import 'package:fakahany/constants.dart';
 import 'package:fakahany/core/widgets/custom_text_field.dart';
+import 'package:fakahany/features/auth/presentation/views/widgets/terms_and_conditions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -35,6 +36,11 @@ class SignupViewBody extends StatelessWidget {
                 color: const Color(0xFFC9CECF),
               ),
             ),
+            SizedBox(
+              height: 16.h,
+            ),
+            TermsAndConditions(),
+
           ],
         ),
       ),
