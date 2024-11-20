@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "522135720573",
+    "project_id": "el-fakahany",
+    "storage_bucket": "el-fakahany.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522135720573:android:eb0361bb73f2accaa71714",
+        "android_client_info": {
+          "package_name": "com.example.fakahany"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDclC9G-F8ZeTgq5nNiheaTugUS6g1E83s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
