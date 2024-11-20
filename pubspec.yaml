@@ -10,6 +10,7 @@ environment:
   sdk: ^3.5.4
 
 dependencies:
+  firebase_auth: ^5.3.3
   dartz: ^0.10.1
   shared_preferences: ^2.3.3
   flutter_screenutil: ^5.9.3
