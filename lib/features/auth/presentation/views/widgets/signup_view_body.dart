@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/widgets/password_field.dart';
 import 'have_an_account_widget.dart';
 
 class SignupViewBody extends StatefulWidget {
@@ -53,16 +54,10 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               SizedBox(
                 height: 16.h,
               ),
-              CustomTextFormField(
+              PasswordField(
                 onSaved: (value) {
                   password = value!;
                 },
-                hintText: 'كلمة المرور',
-                textInputType: TextInputType.visiblePassword,
-                suffixIcon: Icon(
-                  Icons.remove_red_eye,
-                  color: const Color(0xFFC9CECF),
-                ),
               ),
               SizedBox(
                 height: 16.h,
