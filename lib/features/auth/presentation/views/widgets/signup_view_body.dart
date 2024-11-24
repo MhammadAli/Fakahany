@@ -1,4 +1,5 @@
 import 'package:fakahany/constants.dart';
+import 'package:fakahany/core/helper_functions/build_error_bar.dart';
 import 'package:fakahany/core/widgets/custom_button.dart';
 import 'package:fakahany/core/widgets/custom_text_field.dart';
 import 'package:fakahany/features/auth/presentation/signup_cubits/signup_cubit.dart';
@@ -21,6 +22,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   late String userName, email, password;
+  late bool isTermsAccepted = false;
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
 
   @override
@@ -62,7 +64,11 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               SizedBox(
                 height: 16.h,
               ),
-              TermsAndConditions(),
+              TermsAndConditions(
+                onChanged: (value) {
+                  isTermsAccepted = value;
+                },
+              ),
               SizedBox(
                 height: 30.h,
               ),
@@ -70,13 +76,18 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      context
-                          .read<SignupCubit>()
-                          .createUserWithEmailAndPassword(
-                            email,
-                            password,
-                            userName,
-                          );
+                      if (isTermsAccepted) {
+                        context
+                            .read<SignupCubit>()
+                            .createUserWithEmailAndPassword(
+                              email,
+                              password,
+                              userName,
+                            );
+                      } else {
+                        buildErrorBar(
+                            context, 'يجب عليك الموافقة على الشروط والأحكام');
+                      }
                     } else {
                       setState(() {
                         autoValidateMode = AutovalidateMode.always;

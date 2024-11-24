@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TermsAndConditions extends StatefulWidget {
-  const TermsAndConditions({super.key});
+  const TermsAndConditions({super.key, required this.onChanged});
+
+  final ValueChanged<bool> onChanged;
 
   @override
   State<TermsAndConditions> createState() => _TermsAndConditionsState();
@@ -21,9 +23,8 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
         CustomCheckBox(
           onChecked: (value) {
             isTermsAccepted = value;
-            setState(() {
-
-            });
+            widget.onChanged(value);
+            setState(() {});
           },
           isChecked: isTermsAccepted,
         ),
