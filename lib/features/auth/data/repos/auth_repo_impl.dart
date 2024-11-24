@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:fakahany/core/errors/failures.dart';
 import 'package:fakahany/core/services/firebase_auth_service.dart';
@@ -33,6 +35,7 @@ class AuthRepoImpl extends AuthRepo {
         ),
       );
     } catch (e) {
+      log('Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}');
       return left(
         ServerFailure(
           'لقد حدث خطأ ما. الرجاء المحاولة مرة أخرى',
