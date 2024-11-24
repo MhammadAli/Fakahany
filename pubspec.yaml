@@ -10,6 +10,8 @@ environment:
   sdk: ^3.5.4
 
 dependencies:
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
   firebase_auth: ^5.3.3
   dartz: ^0.10.1
   shared_preferences: ^2.3.3
@@ -47,15 +49,15 @@ flutter:
     - assets/images/
 
   fonts:
-   - family: Cairo
-     fonts:
-       - asset: assets/fonts/Cairo-Regular.ttf
-       - asset: assets/fonts/Cairo-Medium.ttf
-         weight: 500
-       - asset: assets/fonts/Cairo-SemiBold.ttf
-         weight: 600
-       - asset: assets/fonts/Cairo-Bold.ttf
-         weight: 700
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
 
 
 flutter_assets_generator:
