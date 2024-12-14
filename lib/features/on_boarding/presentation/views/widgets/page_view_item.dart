@@ -1,4 +1,4 @@
-import 'package:fakahany/features/auth/presentation/views/login_view.dart';
+import 'package:fakahany/features/auth/presentation/views/signin_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -50,7 +50,7 @@ class PageViewItem extends StatelessWidget {
                   onTap: () {
                     Prefs.setBool(isOnBoardingViewSeenKey, true);
                     Navigator.of(context)
-                        .pushReplacementNamed(LoginView.routeName);
+                        .pushReplacementNamed(SignInView.routeName);
                   },
                   child: Padding(
                     padding: EdgeInsets.all(16.0.w),

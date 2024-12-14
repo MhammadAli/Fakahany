@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../../../../../core/helper_functions/build_error_bar.dart';
-import '../../signup_cubits/signup_cubit.dart';
+import '../../cubits/signup_cubits/signup_cubit.dart';
 
 class SignupViewBodyBlocConsumer extends StatelessWidget {
   const SignupViewBodyBlocConsumer({

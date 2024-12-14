@@ -11,8 +11,8 @@ import '../../../../../constants.dart';
 import '../../../../../generated/assets.dart';
 import 'dont_have_account_widget.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class SignInViewBody extends StatelessWidget {
+  const SignInViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,32 +63,32 @@ class LoginViewBody extends StatelessWidget {
             SizedBox(
               height: 33.h,
             ),
-           const DontHaveAnAccountWidget(),
+            const DontHaveAnAccountWidget(),
             SizedBox(
               height: 33.h,
             ),
             OrDivider(),
             SizedBox(
-              height:16.h,
+              height: 16.h,
             ),
             SocialLoginButton(
-              onPressed: (){},
+              onPressed: () {},
               image: Assets.imagesGoogleIcon,
               title: 'تسجيل بواسطة جوجل',
             ),
             SizedBox(
-              height:16.h,
+              height: 16.h,
             ),
             SocialLoginButton(
-              onPressed: (){},
+              onPressed: () {},
               image: Assets.imagesAppleIcon,
               title: 'تسجيل بواسطة أبل',
             ),
             SizedBox(
-              height:16.h,
+              height: 16.h,
             ),
             SocialLoginButton(
-              onPressed: (){},
+              onPressed: () {},
               image: Assets.imagesFacebookIcon,
               title: 'تسجيل بواسطة فيسبوك',
             ),
@@ -98,5 +98,3 @@ class LoginViewBody extends StatelessWidget {
     );
   }
 }
-
-

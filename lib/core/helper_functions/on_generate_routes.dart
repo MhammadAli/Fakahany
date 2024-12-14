@@ -2,7 +2,7 @@ import 'package:fakahany/features/on_boarding/presentation/views/on_boarding_vie
 import 'package:fakahany/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
-import '../../features/auth/presentation/views/login_view.dart';
+import '../../features/auth/presentation/views/signin_view.dart';
 import '../../features/auth/presentation/views/signup_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -15,14 +15,14 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const OnBoardingView(),
       );
-    case LoginView.routeName:
+    case SignInView.routeName:
       return MaterialPageRoute(
-        builder: (context) => const LoginView(),
+        builder: (context) => const SignInView(),
       );
-      case SignupView.routeName:
+    case SignupView.routeName:
       return MaterialPageRoute(
-  builder: (context) => const SignupView(),
-  );
+        builder: (context) => const SignupView(),
+      );
     default:
       return MaterialPageRoute(
         builder: (context) => const Scaffold(),

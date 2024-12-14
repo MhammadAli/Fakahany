@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:fakahany/features/auth/domain/entities/user_entity.dart';
 import 'package:meta/meta.dart';
 
-import '../../domain/repos/auth_repo.dart';
+import '../../../domain/repos/auth_repo.dart';
 
 part 'signup_state.dart';
 

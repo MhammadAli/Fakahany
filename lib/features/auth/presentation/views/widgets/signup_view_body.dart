@@ -2,13 +2,13 @@ import 'package:fakahany/constants.dart';
 import 'package:fakahany/core/helper_functions/build_error_bar.dart';
 import 'package:fakahany/core/widgets/custom_button.dart';
 import 'package:fakahany/core/widgets/custom_text_field.dart';
-import 'package:fakahany/features/auth/presentation/signup_cubits/signup_cubit.dart';
 import 'package:fakahany/features/auth/presentation/views/widgets/terms_and_conditions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/widgets/password_field.dart';
+import '../../cubits/signup_cubits/signup_cubit.dart';
 import 'have_an_account_widget.dart';
 
 class SignupViewBody extends StatefulWidget {
