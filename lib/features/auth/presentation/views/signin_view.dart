@@ -1,5 +1,4 @@
 import 'package:fakahany/features/auth/presentation/cubits/signin_cubits/signin_cubit.dart';
-import 'package:fakahany/features/auth/presentation/views/widgets/signin_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,7 +22,7 @@ class SignInView extends StatelessWidget {
           context,
           title: 'تسجيل دخول',
         ),
-        body: SignInViewBody(),
+        body: SignInViewBodyBlocConsumer(),
       ),
     );
   }
