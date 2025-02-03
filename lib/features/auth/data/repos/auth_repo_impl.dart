@@ -7,6 +7,7 @@ import 'package:fakahany/core/services/firebase_auth_service.dart';
 import 'package:fakahany/features/auth/domain/entities/user_entity.dart';
 import 'package:fakahany/features/auth/domain/repos/auth_repo.dart';
 import 'package:fakahany/utils/backend_endpoints.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../../../core/errors/exceptions.dart';
 import '../models/user_model.dart';
@@ -24,8 +25,9 @@ class AuthRepoImpl extends AuthRepo {
     String password,
     String name,
   ) async {
+    User? user;
     try {
-      var user = await firebaseAuthService.createUserWithEmailAndPassword(
+      user = await firebaseAuthService.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -35,12 +37,18 @@ class AuthRepoImpl extends AuthRepo {
         userEntity,
       );
     } on CustomException catch (e) {
+      if (user != null) {
+        await firebaseAuthService.deleteUser();
+      }
       return left(
         ServerFailure(
           e.message,
         ),
       );
     } catch (e) {
+      if (user != null) {
+        await firebaseAuthService.deleteUser();
+      }
       log('Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}');
       return left(
         ServerFailure(
