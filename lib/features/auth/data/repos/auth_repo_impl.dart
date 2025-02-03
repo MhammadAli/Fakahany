@@ -106,4 +106,10 @@ class AuthRepoImpl extends AuthRepo {
       );
     }
   }
+
+  @override
+  Future addUserData({required UserEntity userEntity}) {
+    // TODO: implement addData
+    throw UnimplementedError();
+  }
 }
