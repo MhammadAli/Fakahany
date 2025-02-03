@@ -2,17 +2,21 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:fakahany/core/errors/failures.dart';
+import 'package:fakahany/core/services/data_service.dart';
 import 'package:fakahany/core/services/firebase_auth_service.dart';
 import 'package:fakahany/features/auth/domain/entities/user_entity.dart';
 import 'package:fakahany/features/auth/domain/repos/auth_repo.dart';
+import 'package:fakahany/utils/backend_endpoints.dart';
 
 import '../../../../core/errors/exceptions.dart';
 import '../models/user_model.dart';
 
 class AuthRepoImpl extends AuthRepo {
   final FirebaseAuthService firebaseAuthService;
+  final DatabaseService databaseService;
 
-  AuthRepoImpl({required this.firebaseAuthService});
+  AuthRepoImpl(
+      {required this.firebaseAuthService, required this.databaseService});
 
   @override
   Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(
@@ -25,8 +29,10 @@ class AuthRepoImpl extends AuthRepo {
         email: email,
         password: password,
       );
+      final userEntity = UserModel.fromFirebaseUser(user);
+      await addUserData(userEntity: userEntity);
       return right(
-        UserModel.fromFirebaseUser(user),
+        userEntity,
       );
     } on CustomException catch (e) {
       return left(
@@ -108,8 +114,8 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future addUserData({required UserEntity userEntity}) {
-    // TODO: implement addData
-    throw UnimplementedError();
+  Future addUserData({required UserEntity userEntity}) async {
+    await databaseService.addData(
+        path: BackendEndpoints.addUserData, data: userEntity.toMap());
   }
 }
