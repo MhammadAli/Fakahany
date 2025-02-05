@@ -2,10 +2,10 @@ class UserEntity {
   UserEntity({
     required this.name,
     required this.email,
-    required this.uid,
+    required this.uId,
   });
 
-  final String name, email, uid;
+  final String name, email, uId;
 
-  toMap() => {'name': name, 'email': email, 'uid': uid};
+  toMap() => {'name': name, 'email': email, 'uid': uId};
 }
