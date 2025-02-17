@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../features/auth/presentation/views/signin_view.dart';
 import '../../features/auth/presentation/views/signup_view.dart';
+import '../../features/home/presentation/views/home_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -22,6 +23,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case SignupView.routeName:
       return MaterialPageRoute(
         builder: (context) => const SignupView(),
+      );
+
+    case HomeView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const HomeView(),
       );
     default:
       return MaterialPageRoute(
