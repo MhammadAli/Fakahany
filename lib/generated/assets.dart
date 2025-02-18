@@ -9,6 +9,7 @@ class Assets {
   static const String imagesAppleIcon = 'assets/images/apple_icon.svg';
   static const String imagesCheckIcon = 'assets/images/check_icon.svg';
   static const String imagesFacebookIcon = 'assets/images/facebook_icon.svg';
+  static const String imagesFilter = 'assets/images/filter.svg';
   static const String imagesFruits = 'assets/images/fruits.png';
   static const String imagesGoogleIcon = 'assets/images/google_icon.svg';
   static const String imagesLogo = 'assets/images/logo.svg';
@@ -23,5 +24,6 @@ class Assets {
       'assets/images/page_view_item2_image.svg';
   static const String imagesPlant = 'assets/images/plant.svg';
   static const String imagesProfileImage = 'assets/images/profile_image.png';
+  static const String imagesSearchIcon = 'assets/images/search_icon.svg';
   static const String imagesSplashBottom = 'assets/images/splash_bottom.svg';
 }
