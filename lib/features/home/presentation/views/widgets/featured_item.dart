@@ -2,7 +2,8 @@ import 'package:fakahany/features/home/presentation/views/widgets/featured_item_
 import 'package:fakahany/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg;
 
 import '../../../../../generated/assets.dart';
 
@@ -18,12 +19,21 @@ class FeaturedItem extends StatelessWidget {
         aspectRatio: 342 / 165,
         child: Stack(
           children: [
-            Image.asset(Assets.imagesWatermelonTest),
+            Positioned(
+              child: SvgPicture.asset(
+                Assets.imagesPageViewItem2Image,
+                fit: BoxFit.fill,
+              ),
+              left: 0,
+              bottom: 0,
+              top: 0,
+              right: itemWidth * .4,
+            ),
             Container(
               width: itemWidth * .5,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: Svg(Assets.imagesFeaturedItemBackground),
+                  image: svg.Svg(Assets.imagesFeaturedItemBackground),
                   fit: BoxFit.fill,
                 ),
               ),
