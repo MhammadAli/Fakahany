@@ -1,7 +1,7 @@
 import 'package:fakahany/constants.dart';
 import 'package:fakahany/core/widgets/search_text_field.dart';
 import 'package:fakahany/features/home/presentation/views/widgets/custom_home_app_bar.dart';
-import 'package:fakahany/features/home/presentation/views/widgets/featured_item.dart';
+import 'package:fakahany/features/home/presentation/views/widgets/featured_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -28,7 +28,7 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(
                   height: 12.h,
                 ),
-                FeaturedItem(),
+                const FeaturedList(),
               ],
             ),
           )
