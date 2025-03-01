@@ -1,5 +1,6 @@
 import 'package:fakahany/constants.dart';
 import 'package:fakahany/core/widgets/search_text_field.dart';
+import 'package:fakahany/features/home/presentation/views/widgets/best_selling_header.dart';
 import 'package:fakahany/features/home/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:fakahany/features/home/presentation/views/widgets/featured_list.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,10 @@ class HomeViewBody extends StatelessWidget {
                   height: 12.h,
                 ),
                 const FeaturedList(),
+                SizedBox(
+                  height: 12.h,
+                ),
+                const BestSellingHeader(),
               ],
             ),
           )
