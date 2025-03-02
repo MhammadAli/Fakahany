@@ -1,4 +1,5 @@
 import 'package:fakahany/constants.dart';
+import 'package:fakahany/core/widgets/fruit_item.dart';
 import 'package:fakahany/core/widgets/search_text_field.dart';
 import 'package:fakahany/features/home/presentation/views/widgets/best_selling_header.dart';
 import 'package:fakahany/features/home/presentation/views/widgets/custom_home_app_bar.dart';
@@ -34,6 +35,10 @@ class HomeViewBody extends StatelessWidget {
                   height: 12.h,
                 ),
                 const BestSellingHeader(),
+                SizedBox(
+                  height: 8.h,
+                ),
+                const FruitItem(),
               ],
             ),
           )
