@@ -1,6 +1,6 @@
 import 'package:fakahany/constants.dart';
-import 'package:fakahany/core/widgets/fruit_item.dart';
 import 'package:fakahany/core/widgets/search_text_field.dart';
+import 'package:fakahany/features/home/presentation/views/widgets/best_selling_grid_view.dart';
 import 'package:fakahany/features/home/presentation/views/widgets/best_selling_header.dart';
 import 'package:fakahany/features/home/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:fakahany/features/home/presentation/views/widgets/featured_list.dart';
@@ -38,10 +38,10 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(
                   height: 8.h,
                 ),
-                const FruitItem(),
               ],
             ),
-          )
+          ),
+          const BestSellingGridView(),
         ],
       ),
     );
