@@ -14,6 +14,8 @@ class Assets {
   static const String imagesFilter = 'assets/images/filter.svg';
   static const String imagesFruits = 'assets/images/fruits.png';
   static const String imagesGoogleIcon = 'assets/images/google_icon.svg';
+  static const String imagesHomeBold = 'assets/images/home_bold.svg';
+  static const String imagesHomeOutlined = 'assets/images/home_outlined.svg';
   static const String imagesLogo = 'assets/images/logo.svg';
   static const String imagesNotification = 'assets/images/notification.svg';
   static const String imagesPageViewItem1BackgroundImage =
@@ -25,9 +27,18 @@ class Assets {
   static const String imagesPageViewItem2Image =
       'assets/images/page_view_item2_image.svg';
   static const String imagesPlant = 'assets/images/plant.svg';
+  static const String imagesProductsBold = 'assets/images/products_bold.svg';
+  static const String imagesProductsOutlined =
+      'assets/images/products_outlined.svg';
   static const String imagesProfileImage = 'assets/images/profile_image.png';
   static const String imagesSearchIcon = 'assets/images/search_icon.svg';
+  static const String imagesShoppingCartBold =
+      'assets/images/shopping_cart_bold.svg';
+  static const String imagesShoppingCartOutlined =
+      'assets/images/shopping_cart_outlined.svg';
   static const String imagesSplashBottom = 'assets/images/splash_bottom.svg';
+  static const String imagesUserBold = 'assets/images/user_bold.svg';
+  static const String imagesUserOutlined = 'assets/images/user_outlined.svg';
   static const String imagesWatermelonTest =
       'assets/images/watermelon_test.png';
 }
