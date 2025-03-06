@@ -9,7 +9,9 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: const InActiveItem(image: Assets.imagesHomeOutlined),
+      child: const InActiveItem(
+        image: Assets.imagesHomeOutlined,
+      ),
       width: 375,
       height: 70,
       decoration: const ShapeDecoration(
@@ -41,5 +43,27 @@ class InActiveItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(image);
+  }
+}
+
+class ActiveItem extends StatelessWidget {
+  const ActiveItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+
+class NavigationBarItem extends StatelessWidget {
+  const NavigationBarItem({super.key, required this.isSelected});
+
+  final bool isSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    return isSelected
+        ? const ActiveItem()
+        : const InActiveItem(image: Assets.imagesHomeOutlined);
   }
 }
