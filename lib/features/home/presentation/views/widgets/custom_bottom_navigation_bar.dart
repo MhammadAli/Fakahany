@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../../generated/assets.dart';
+import '../../../../home/domain/entities/bottom_navigation_bar_entity.dart';
+import 'navigation_bar_item.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);
@@ -9,8 +9,13 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: const InActiveItem(
-        image: Assets.imagesHomeOutlined,
+      child: Row(
+        children: BottomNavigationBarEntity.bottomNavigationBarItems.map((e) {
+          return NavigationBarItem(
+            isSelected: false,
+            bottomNavigationBarEntity: e,
+          );
+        }).toList(),
       ),
       width: 375,
       height: 70,
@@ -32,38 +37,5 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class InActiveItem extends StatelessWidget {
-  const InActiveItem({super.key, required this.image});
-
-  final String image;
-
-  @override
-  Widget build(BuildContext context) {
-    return SvgPicture.asset(image);
-  }
-}
-
-class ActiveItem extends StatelessWidget {
-  const ActiveItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
-
-class NavigationBarItem extends StatelessWidget {
-  const NavigationBarItem({super.key, required this.isSelected});
-
-  final bool isSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    return isSelected
-        ? const ActiveItem()
-        : const InActiveItem(image: Assets.imagesHomeOutlined);
   }
 }

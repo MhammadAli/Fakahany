@@ -9,7 +9,7 @@ class BottomNavigationBarEntity {
     required this.name,
   });
 
-  List<BottomNavigationBarEntity> get bottomNavigationBarItems => [
+  static List<BottomNavigationBarEntity> get bottomNavigationBarItems => [
         BottomNavigationBarEntity(
           activeImage: Assets.imagesHomeBold,
           inActiveImage: Assets.imagesHomeOutlined,
@@ -28,7 +28,7 @@ class BottomNavigationBarEntity {
         BottomNavigationBarEntity(
           activeImage: Assets.imagesUserBold,
           inActiveImage: Assets.imagesUserOutlined,
-          name: 'سلة حسابي',
+          name: 'حسابي',
         ),
       ];
 }
