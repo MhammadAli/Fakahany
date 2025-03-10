@@ -11,46 +11,43 @@ class ActiveItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 3,
-      child: Center(
-        child: Container(
-          padding: EdgeInsets.only(
-            left: 16.w,
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                child: Center(child: SvgPicture.asset(image)),
-                width: 30,
-                height: 30,
-                decoration: ShapeDecoration(
-                  color: AppColors.primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                      30.r,
-                    ),
+    return Center(
+      child: Container(
+        padding: EdgeInsets.only(
+          left: 16.w,
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              child: Center(child: SvgPicture.asset(image)),
+              width: 30,
+              height: 30,
+              decoration: ShapeDecoration(
+                color: AppColors.primaryColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(
+                    30.r,
                   ),
                 ),
               ),
-              SizedBox(
-                width: 4.w,
+            ),
+            SizedBox(
+              width: 4.w,
+            ),
+            Text(
+              text,
+              style: AppTextStyles.semiBold11.copyWith(
+                color: AppColors.primaryColor,
               ),
-              Text(
-                text,
-                style: AppTextStyles.semiBold11.copyWith(
-                  color: AppColors.primaryColor,
-                ),
-              ),
-            ],
-          ),
-          decoration: ShapeDecoration(
-            color: const Color(0xFFEEEEEE),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(
-                30.r,
-              ),
+            ),
+          ],
+        ),
+        decoration: ShapeDecoration(
+          color: const Color(0xFFEEEEEE),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+              30.r,
             ),
           ),
         ),
