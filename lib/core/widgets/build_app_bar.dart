@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/app_text_styles.dart';
+import 'notification_widget.dart';
 
-AppBar buildAppBar(
-  context, {
-  required String title,
-}) {
+AppBar buildAppBar(context) {
   return AppBar(
-    backgroundColor: Colors.white,
+    actions: const [
+      Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: NotificationWidget(),
+      ),
+    ],
     leading: GestureDetector(
       onTap: () {
         Navigator.pop(context);
@@ -16,9 +19,11 @@ AppBar buildAppBar(
         Icons.arrow_back_ios_new,
       ),
     ),
+    backgroundColor: Colors.transparent,
+    elevation: 0,
     centerTitle: true,
     title: Text(
-      title,
+      'الأكثر مبيعًا',
       textAlign: TextAlign.center,
       style: AppTextStyles.bold19,
     ),
