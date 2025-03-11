@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../features/auth/presentation/views/signin_view.dart';
 import '../../features/auth/presentation/views/signup_view.dart';
+import '../../features/best_selling_fruits/presentation/views/best_selling_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -28,6 +29,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case HomeView.routeName:
       return MaterialPageRoute(
         builder: (context) => const HomeView(),
+      );
+
+    case BestSellingView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const BestSellingView(),
       );
     default:
       return MaterialPageRoute(
