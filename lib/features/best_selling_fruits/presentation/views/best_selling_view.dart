@@ -1,7 +1,7 @@
 import 'package:fakahany/features/best_selling_fruits/presentation/views/widgets/best_selling_view_body.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/widgets/build_app_bar.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
 
 class BestSellingView extends StatelessWidget {
   const BestSellingView({super.key});
@@ -13,6 +13,8 @@ class BestSellingView extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(
         context,
+        title: 'الأكثر مبيعًا',
+        putNotificationIcon: true,
       ),
       body: const BestSellingViewBody(),
     );
