@@ -24,20 +24,20 @@ class FirebaseAuthService {
     } on FirebaseAuthException catch (e) {
       log('Exception in FirebaseAuthService.createUserWithEmailAndPassword: ${e.toString()} and code is ${e.code}');
       if (e.code == 'weak-password') {
-        throw CustomException(message: 'الرقم السرى ضعيف جداً');
+        throw const CustomException(message: 'الرقم السرى ضعيف جداً');
       } else if (e.code == 'email-already-in-use') {
-        throw CustomException(
+        throw const CustomException(
             message: 'لقد قمت بالتسجيل مسبقاً. الرجاء تسجيل الدخول');
       } else if (e.code == 'network-request-failed') {
-        throw CustomException(message: 'تأكد من اتصالك بالإنترنت');
+        throw const CustomException(message: 'تأكد من اتصالك بالإنترنت');
       } else {
-        throw CustomException(
+        throw const CustomException(
             message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة أخرى');
       }
     } catch (e) {
       log('Exception in FirebaseAuthService.createUserWithEmailAndPassword: ${e.toString()}');
 
-      throw CustomException(
+      throw const CustomException(
           message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة أخرى');
     }
   }
@@ -55,20 +55,20 @@ class FirebaseAuthService {
     } on FirebaseAuthException catch (e) {
       log('Exception in FirebaseAuthService.signInWithEmailAndPassword: ${e.toString()} and code is ${e.code}');
       if (e.code == 'user-not-found') {
-        throw CustomException(
+        throw const CustomException(
             message: 'كلمة المرور أو البريد الإلمتروني غير صحيح');
       } else if (e.code == 'wrong-password') {
-        throw CustomException(
+        throw const CustomException(
             message: 'كلمة المرور أو البريد الإلمتروني غير صحيح');
       } else if (e.code == 'network-request-failed') {
-        throw CustomException(message: 'تأكد من اتصالك بالإنترنت');
+        throw const CustomException(message: 'تأكد من اتصالك بالإنترنت');
       } else {
-        throw CustomException(
+        throw const CustomException(
             message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة أخرى');
       }
     } catch (e) {
       log('Exception in FirebaseAuthService.signInWithEmailAndPassword: ${e.toString()}');
-      throw CustomException(
+      throw const CustomException(
           message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة أخرى');
     }
   }
@@ -93,4 +93,6 @@ class FirebaseAuthService {
             .signInWithCredential(facebookAuthCredential))
         .user!;
   }
+
+  bool isLoggedIn() => FirebaseAuth.instance.currentUser != null;
 }

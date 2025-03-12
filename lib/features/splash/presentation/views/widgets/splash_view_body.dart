@@ -1,3 +1,5 @@
+import 'package:fakahany/core/services/firebase_auth_service.dart';
+import 'package:fakahany/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -46,7 +48,12 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     Future.delayed(const Duration(seconds: 3), () {
       bool isOnBoardingViewSeen = Prefs.getBool(isOnBoardingViewSeenKey);
       if (isOnBoardingViewSeen) {
-        Navigator.pushReplacementNamed(context, SignInView.routeName);
+        final isLoggedIn = FirebaseAuthService().isLoggedIn();
+        if (isLoggedIn) {
+          Navigator.pushReplacementNamed(context, HomeView.routeName);
+        } else {
+          Navigator.pushReplacementNamed(context, SignInView.routeName);
+        }
       } else {
         Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
       }
