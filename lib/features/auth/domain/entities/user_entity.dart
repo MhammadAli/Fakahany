@@ -6,6 +6,4 @@ class UserEntity {
   });
 
   final String name, email, uId;
-
-  toMap() => {'name': name, 'email': email, 'uid': uId};
 }

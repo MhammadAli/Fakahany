@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
+import 'package:fakahany/constants.dart';
 import 'package:fakahany/core/errors/failures.dart';
 import 'package:fakahany/core/services/data_service.dart';
 import 'package:fakahany/core/services/firebase_auth_service.dart';
@@ -10,6 +12,7 @@ import 'package:fakahany/utils/backend_endpoints.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../../../core/errors/exceptions.dart';
+import '../../../../core/services/shared_preferences_singleton.dart';
 import '../models/user_model.dart';
 
 class AuthRepoImpl extends AuthRepo {
@@ -51,7 +54,7 @@ class AuthRepoImpl extends AuthRepo {
       await deleteUser(user);
       log('Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}');
       return left(
-        ServerFailure(
+        const ServerFailure(
           'لقد حدث خطأ ما. الرجاء المحاولة مرة أخرى',
         ),
       );
@@ -87,7 +90,7 @@ class AuthRepoImpl extends AuthRepo {
     } catch (e) {
       log('Exception in AuthRepoImpl.signInWithEmailAndPassword: ${e.toString()}');
       return left(
-        ServerFailure(
+        const ServerFailure(
           'لقد حدث خطأ ما. الرجاء المحاولة مرة أخرى',
         ),
       );
@@ -117,7 +120,7 @@ class AuthRepoImpl extends AuthRepo {
       await deleteUser(user);
       log('Exception in AuthRepoImpl.signInWithGoogle: ${e.toString()}');
       return left(
-        ServerFailure(
+        const ServerFailure(
           'لقد حدث خطأ ما. الرجاء المحاولة مرة أخرى',
         ),
       );
@@ -138,7 +141,7 @@ class AuthRepoImpl extends AuthRepo {
       await deleteUser(user);
       log('Exception in AuthRepoImpl.signInWithFacebook: ${e.toString()}');
       return left(
-        ServerFailure(
+        const ServerFailure(
           'لقد حدث خطأ ما. الرجاء المحاولة مرة أخرى',
         ),
       );
@@ -149,7 +152,7 @@ class AuthRepoImpl extends AuthRepo {
   Future addUserData({required UserEntity userEntity}) async {
     await databaseService.addData(
       path: BackendEndpoints.addUserData,
-      data: userEntity.toMap(),
+      data: UserModel.fromEntity(userEntity).toMap(),
       documentId: userEntity.uId,
     );
   }
@@ -161,5 +164,11 @@ class AuthRepoImpl extends AuthRepo {
       documentId: uId,
     );
     return UserModel.fromJson(userData);
+  }
+
+  @override
+  Future saveUserData({required UserEntity userEntity}) async {
+    final jsonData = jsonEncode(UserModel.fromEntity(userEntity).toMap());
+    await Prefs.setString(kUserData, jsonData);
   }
 }
