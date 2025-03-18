@@ -1,3 +1,4 @@
+import 'package:fakahany/core/helper_functions/get_user.dart';
 import 'package:fakahany/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class CustomHomeAppBar extends StatelessWidget {
         ),
       ),
       subtitle: Text(
-        'أحمد مصطفي',
+        getUser().name,
         textAlign: TextAlign.right,
         style: AppTextStyles.bold16,
       ),

@@ -78,6 +78,7 @@ class AuthRepoImpl extends AuthRepo {
         password: password,
       );
       final userEntity = await getUserData(uId: user.uid);
+      await saveUserData(userEntity: userEntity);
       return right(
         userEntity,
       );

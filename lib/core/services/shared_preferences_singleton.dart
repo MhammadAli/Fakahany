@@ -13,4 +13,6 @@ class Prefs {
 
   static setString(String key, String value) async =>
       await _instance.setString(key, value);
+
+  static getString(String key) => _instance.getString(key);
 }
