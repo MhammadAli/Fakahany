@@ -113,7 +113,7 @@ class AuthRepoImpl extends AuthRepo {
       } else {
         await addUserData(userEntity: userEntity);
       }
-
+      await saveUserData(userEntity: userEntity);
       return right(
         userEntity,
       );
